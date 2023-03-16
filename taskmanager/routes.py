@@ -10,7 +10,9 @@ def home():
 
 @app.route("/categories")
 def categories():
+    # This will ask table to extract and sort by category name
     categories = list(Category.query.order_by(Category.category_name).all())
+    # this will allow to display the tasks to users
     return render_template("categories.html", categories=categories)
 
 
